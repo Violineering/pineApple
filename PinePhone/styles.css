@@ -12,7 +12,6 @@ body {
     color: #1d1d1f;
 }
 
-/* Ensure box-sizing is applied universally */
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -22,17 +21,17 @@ body {
     border-bottom: 1px solid #eaeaea;
     padding: 10px 20px;   
     
-    position: -webkit-sticky; /* For Safari */
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 1000; /* Ensure it stays above other content */
-    width: 100%; /* Ensure it takes full width */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for visual separation */
+    z-index: 1000; 
+    width: 100%; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .navbar-container {
     display: flex;
-    justify-content: space-between; /* Distributes space between logo and icons */
+    justify-content: space-between; 
     align-items: center;
     margin: 0 auto;
     width: 100%;
@@ -46,7 +45,7 @@ body {
 navbar-logo {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Aligns the icons to the left */
+    justify-content: flex-start; 
     flex: 1;
 }
 
@@ -62,7 +61,7 @@ navbar-logo {
 }
 
 .list-page {
-    flex: 1; /* All items will have equal width */
+    flex: 1; 
     text-align: center;
     padding: 10px;
 }
@@ -70,7 +69,7 @@ navbar-logo {
 .navbar-icons {
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Aligns the icons to the right */
+    justify-content: flex-end; 
 }
 
 .navbar-icons svg {
@@ -100,7 +99,7 @@ nav a {
 nav a:hover {
     color: #007aff;
     border-bottom: 2px solid #007aff;
-    padding-bottom: 10px; /* Adjust padding on hover for expansion effect */
+    padding-bottom: 10px; 
 }
 
 /* Additional CSS to ensure body content starts below the sticky navbar */
@@ -184,8 +183,8 @@ input[type="password"]:focus {
 }
 
 .logo-img {
-    max-width: 60px; /* Set max width as necessary */
-    height: 40px; /* Maintain aspect ratio */
+    max-width: 60px; 
+    height: 40px; 
 }
 
 .modal {
@@ -197,7 +196,7 @@ input[type="password"]:focus {
     width: 100%; 
     height: 100%; 
     overflow: auto; 
-    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.5); 
     justify-content: center;
     align-items: center;
     padding-top: 60px; 
@@ -210,17 +209,6 @@ input[type="password"]:focus {
     border: 1px solid #888;
     width: 80%;
 }
-
-/* .close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    z-index: 10; 
-} */
 
 /* Item Details Style */
 main {
@@ -273,18 +261,18 @@ main {
     margin-bottom: 20px;
     border: 2px solid black;
     border-radius: 10rem;
-    width: 100%; /* Set your desired width */
-    height: 400px; /* Set your desired height */
-    position: relative; /* Required for absolute positioning */
-    overflow:  hidden; /* Set your desired overflow */
+    width: 100%; 
+    height: 400px; 
+    position: relative; 
+    overflow: hidden; 
 }
 
 #itemImage {
     position: center;
     width: 80%;
     height: 100%;
-    object-fit: cover; /* Maintains aspect ratio and crops image if necessary */
-    transform: translate(-50%, -50%); /* Centers the image */
+    object-fit: cover; 
+    transform: translate(-50%, -50%); 
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     -webkit-filter: drop-shadow(5px 5px 5px #222);
     filter: drop-shadow(10px 10px 5px #222);
@@ -316,20 +304,13 @@ main {
     margin: 15px auto;
 }
 
-/* #feature h3{
-    font-size: 28px;
-} */
-
 #feature ul{
     list-style-type: none;
 }
 
 .grid-container {
     display: grid;
-    /* border: 1px solid black; */
     grid-template-columns: repeat(2, 1fr);
-    /* grid-template-columns: repeat(auto-fill, minmax(250px, 2fr)); */
-    /* grid-template-columns: auto auto auto; */
     gap: 10px;
 }
 
@@ -356,14 +337,13 @@ main {
     flex: 2 1 auto; 
 }
 
-/* Centering and styling for storage and color options */
 .spec {
     display: flex;
-    flex-direction: column; /* Stack the Storage and Color sections */
-    align-items: center; /* Center align the content */
+    flex-direction: column; 
+    align-items: center; 
     margin-top: 20px;
-    margin-bottom: 30px; /* Add bottom margin to prevent overlap */
-    text-align: center; /* Center text content */
+    margin-bottom: 30px; 
+    text-align: center; 
 }
 
 .spec .title {
@@ -371,7 +351,6 @@ main {
 }
 
 .spec .title a {
-    /* margin-bottom: 20px; */
     font-size: 20px;
     font-weight: 500;
     color: #7e7a7a;
@@ -380,15 +359,15 @@ main {
 
 .spec .storage,
 .spec .color {
-    display: flex; /* Arrange options side by side */
-    justify-content: space-between; /* Center align the options */
-    margin-bottom: 20px; /* Add spacing between sections */
-    width: 100%; /* Make sections take full width */
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 20px; 
+    width: 100%; 
 }
 
 
 .spec label.container {
-    font-size: 20px; /* Font size for the label text */
+    font-size: 20px; 
     display: flex;
     align-items: center;
     justify-content: center; 
@@ -396,19 +375,19 @@ main {
     position: relative;
     padding: 10px 20px;
     border: 2px solid black;
-    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1); /* Light shadow around the option */
-    transition: background-color 0.3s, border-color 0.3s; /* Smooth transitions */
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s, border-color 0.3s; 
 }
 
 .spec label.container input[type="radio"] {
-    opacity: 0; /* Hide the actual radio button */
+    opacity: 0; 
     position: absolute; 
 }
 
 .spec label.container input[type="radio"]:checked + .checkmark {
     border-width: 2p solid;
-    border-color: #007aff; /* Border color when checked */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow when selected */
+    border-color: #007aff; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
 }
 
 .spec label.container .checkmark {
@@ -419,18 +398,15 @@ main {
     bottom: 0;
     background-color: transparent; 
     border-radius: 10px;
-    border: 3px solid transparent; /* Transparent border initially */
-    transition: background-color 0.3s, border-color 0.3s; /* Smooth transitions */
+    border: 3px solid transparent; 
+    transition: background-color 0.3s, border-color 0.3s; 
 }
 
 .pb{
-    /* position: absolute;  */
-    /* bottom: 20px; Adjust the distance from the bottom */
-    /* right: 20px; Adjust the distance from the right */
     text-align: right;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Vertically center the items */
+    align-items: center; 
     gap: 20px;
 }
 
@@ -444,7 +420,7 @@ main {
 .pb button {
     background-color: #007aff;
     color: #eee;
-    padding: 5px 20px; /* Adjust padding as needed */
+    padding: 5px 20px; 
     border-radius: 20px;    
     width: 100%;
     border: 2px #eee solid;
@@ -454,7 +430,7 @@ main {
 }
 
 .pb button:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
     border: 2px black solid;
     background-color: #eee;
     color: #007aff;
@@ -465,11 +441,10 @@ main {
     color: #333;
 }
 
-/* Change font color on hover */
 .spec label.container:hover {
     border-width: 2px solid;
-    color: #007aff; /* Change to desired hover color */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
+    color: #007aff; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
 }
 
 /*Responsive Design*/

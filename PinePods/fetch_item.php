@@ -14,10 +14,10 @@ if ($conn->connect_error) {
 }
 
 // Get the product name from the query parameter
-$productName = isset($_GET['product']) ? $_GET['product'] : 'PinePhone OG'; 
+$productName = isset($_GET['product']) ? $_GET['product'] : 'PinePods Gen X'; 
 
 // SQL query to fetch product details
-$sql = "SELECT * FROM PinePhone WHERE name = ?";
+$sql = "SELECT * FROM PinePods WHERE name = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $productName);
 $stmt->execute();
@@ -27,7 +27,7 @@ $result = $stmt->get_result();
 $product = $result->fetch_assoc();
 
 // SQL query to fetch image paths
-$sqlImages = "SELECT image_path FROM phone_image_path WHERE name = ?";
+$sqlImages = "SELECT image_path FROM pods_image_path WHERE name = ?";
 $stmtImages = $conn->prepare($sqlImages);
 $stmtImages->bind_param("s", $productName);
 $stmtImages->execute();
