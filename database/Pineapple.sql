@@ -27,7 +27,7 @@ INSERT INTO PineBook (name, description, core, display, camera, ports, features,
 
 
 CREATE TABLE IF NOT EXISTS book_image_path (
-    id INT(10) AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     image_path VARCHAR(255) NOT NULL
 );
@@ -42,7 +42,7 @@ INSERT INTO book_image_path (name, image_path) VALUES
 
 CREATE TABLE IF NOT EXISTS PinePhone (
     id INT(11) AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(30),
+    name VARCHAR(50),
     description VARCHAR(255),
     core VARCHAR(255),
     chipset VARCHAR(255),
@@ -58,16 +58,20 @@ CREATE TABLE IF NOT EXISTS PinePhone (
 
 INSERT INTO PinePhone (name, description, core, chipset, RAM, display, camera, battery, features, storage, color, price) VALUES
 ('PinePhone Pro Ultimate', 'Built for high performance', 'Hexa-core', 'Pineapple P20 Pro', '8 GB', '6.7 inch PINE Super Retina XDR OLED, 120Hz', '4K Ultra HD Camera', 'Li-Ion 5000 mAh, non-removable battery', 
-'The world''s first phone built with Adamantium metal.', '256GB, 512GB, 1TB', 'Black, White, Natural, Blue', 999),
+'<ul><li>The world''s first phone built with Adamantium metal.</li><li>Quantum levitation technology (defies gravity for an unparalleled experience)</li><li>Endless battery life with solar charging glass</li><li>Ultra-secure biometric encryption</li></ul>', 
+'256GB, 512GB, 1TB', 'Black, White, Natural, Blue', 999),
 ('PinePhone Pro Gamer', 'Optimized for gamers', 'Hexa-core', 'Pineapple P20', '8 GB', '6.7 inch PINE Super Retina OLED, 120Hz', '1080p HD Camera', 'Li-Ion 4700 mAh, non-removable battery',
-'The world''s first phone built with Adamantium metal.', '256GB, 512GB, 1TB', 'Black, White, Red, Blue, Purple, Yellow', 799),
+'<ul><li>Adaptive gaming controls with customizable screen buttons</li><li>Integrated game controllers</li><li>Hyper-cooling system for extended gaming sessions</li></ul>', 
+'256GB, 512GB, 1TB', 'Black, White, Red, Blue, Purple, Yellow', 799),
 ('PinePhone Primitive', 'Affordable and reliable', 'Octa-core', 'Pineapple P19 Pro', '6 GB', '6.7 inch PINE Retina OLED, 60Hz', '1080p HD Camera', 'Li-Ion 4700 mAh, non-removable battery',
-'The world''s first phone built with Adamantium metal.', '256GB, 512GB, 1TB', 'Red, White, Black, Blue, Starlight, Green', 699),
-('PinePhone Cutie', 'Designed for women', 'Hexa-core', 'Pineapple P19', '6 GB', '6.1 inch PINE Retina OLED, 60Hz', '4K Ultra HD Camera', 'Li-Ion 4000 mAh, non-removable battery',
-'The world''s first phone built with Adamantium metal.', '256GB, 512GB, 1TB', 'Black, White, Green, Yellow, Pink', 599),
+'<ul><li>Durable polycarbonate body for everyday use</li><li>All-day battery life</li><li>Fast charging with USB-C port</li></ul>', 
+'256GB, 512GB, 1TB', 'Red, White, Black, Blue, Starlight, Green', 699),
+('PinePhone Cutie', 'Designed for womans', 'Heca-core', 'Pineapple P19', '6 GB', '6.1 inch PINE Retina OLED, 60Hz', '4K Ultra HD Camera', 'Li-Ion 4000 mAh, non-removable battery',
+'<ul><li>Compact and lightweight design</li><li>Customizable shell colors with floral patterns</li><li>Enhanced selfie camera with beauty mode</li></ul>', 
+'256GB, 512GB, 1TB', 'Black, White, Green, Yellow, Pink', 599),
 ('PinePhone OG', 'This is where all it started', 'Dual-core', 'Pineapple P15', '4 GB', '5.4 inch PINE Retina IPS LCD, 30Hz', '720p Camera', 'Li-Ion 2700 mAh, non-removable battery',
-'The world''s first phone built with Adamantium metal.', '64GB, 128GB, 256GB', 'Red, Black, White', 299);
-
+'<ul><li>Classic design with a 30-pin dock connector</li><li>Virtual keyboard and PiOS integration</li></ul>', 
+'64GB, 128GB, 256GB', 'Red, Black, White', 299);
 
 CREATE TABLE IF NOT EXISTS phone_image_path (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -195,9 +199,15 @@ INSERT INTO pods_image_path (name, image_path) VALUES
 CREATE TABLE IF NOT EXISTS Pineapple_Pencil (
     id INT(11) AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(30),
-    price DECIMAL(6,2),
-    compatible_model VARCHAR(50)
+    description VARCHAR(255),
+    price DECIMAL(6,2)
 );
+
+INSERT INTO Pineapple_Pencil (name, description, price) VALUES
+('Pineapple Pencil OG', 'Designed for PineBook OG', 29),
+('Pineapple Pencil Gen 2', 'Designed for PineBook Smol', 49),
+('Pineapple Pencil Gen 3', 'Designed for PineBook Gamer', 79),
+('Pineapple Pencil Pro', 'Designed for PineBook Pro', 199);
 
 CREATE TABLE IF NOT EXISTS pencil_image_path (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -210,12 +220,3 @@ INSERT INTO pencil_image_path (name, image_path) VALUES
 ('Pineapple Pencil Gen 2', '/image/Accessories/Pineapple Pencil/ Pineapple Pencil Gen 2 (Thumbnail).png'),
 ('Pineapple Pencil Gen 3', '/image/Accessories/Pineapple Pencil/ Pineapple Pencil Gen 3 (Thumbnail).png'),
 ('Pineapple Pencil Pro', '/image/Accessories/Pineapple Pencil/ Pineapple Pencil Pro (Thumbnail).png');
-
-CREATE TABLE IF NOT EXISTS users (
-    user_id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) NOT NULL UNIQUE,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
