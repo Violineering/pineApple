@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS PineBook (
 INSERT INTO PineBook (name, description, core, display, camera, ports, features, storage, color, price) VALUES
 ('PineBook Light', 'Designed for light duty', '16-core Juicy Engine (8 CPU, 8 GPU)', '13.6 inch Liquid Retina', '1080p HD Camera', 'Two Flashspeed ports, Two USB ports', 
 '<ul><li>Support for two external display</li><li>35W USB-C Power Adapter</li><li>Fly mode enabled (negates 99.99% of fall damage)</li></ul>',
-'512 GB, 1 TB', 'Red, Black, Yellow', 1499),
+'512 GB, 1 TB', 'Blue, Purple, Green, Yellow', 1499),
 ('PineBook King', 'Designed for heavy duty', '32-core Juicy Engine (16 CPU, 16 GPU)', '16 inch Liquid Retina PDR', '4K Ultra HD Camera', 'Three Flashspeed ports, Four USB ports', 
 '<ul><li>Support for 4 external display</li><li>150W USB-C Power Adapter</li><li>Built from lightweight & durable Vibranium metal (negates 99.99% of physical damage)</li></ul>',
 '512 GB, 1 TB', 'Black, Silver', 2499);
@@ -33,12 +33,12 @@ CREATE TABLE IF NOT EXISTS book_image_path (
 );
 
 INSERT INTO book_image_path (name, image_path) VALUES
-('PineBook King', '../image/PineBook/PineBook King - 1 Spaceblack.png'),
-('PineBook King', '../image/PineBook/PineBook King - 2 Sliver.png'),
-('PineBook Light', '../image/PineBook/PineBook Light - 1 Midnight.png'),
-('PineBook Light', '../image/PineBook/PineBook Light - 2 Starlight.png'),
-('PineBook Light', '../image/PineBook/PineBook Light - 3 Spacegrey.png'),
-('PineBook Light', '../image/PineBook/PineBook Light - 4 Sliver.png');
+('PineBook King', '../image/PineBook/PineBook King - 1.png'),
+('PineBook King', '../image/PineBook/PineBook King - 2.png'),
+('PineBook Light', '../image/PineBook/PineBook Light - 1.png'),
+('PineBook Light', '../image/PineBook/PineBook Light - 2.png'),
+('PineBook Light', '../image/PineBook/PineBook Light - 3.png'),
+('PineBook Light', '../image/PineBook/PineBook Light - 4.png');
 
 CREATE TABLE IF NOT EXISTS PinePhone (
     id INT(11) AUTO_INCREMENT PRIMARY KEY,
