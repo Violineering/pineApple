@@ -177,22 +177,22 @@ CREATE TABLE IF NOT EXISTS pods_image_path (
 );
 
 INSERT INTO pods_image_path (name, image_path) VALUES
-('PinePods Gen X', '/image/PinePods/PinePods Gen X - 1.png'),
-('PinePods Gen X', '/image/PinePods/PinePods Gen X - 2.png'),
-('PinePods Gen X', '/image/PinePods/PinePods Gen X - 3.png'),
-('PinePods Gen Y', '/image/PinePods/PinePods Gen Y - 1.png'),
-('PinePods Gen Y', '/image/PinePods/PinePods Gen Y - 2.png'),
-('PinePods Gen Y', '/image/PinePods/PinePods Gen Y - 3.png'),
-('PinePods Gen Z', '/image/PinePods/PinePods Gen Z - 1.png'),
-('PinePods Gen Z', '/image/PinePods/PinePods Gen Z - 2.png'),
-('PinePods Gen Z', '/image/PinePods/PinePods Gen Z - 3.png'),
-('PinePods Gen Z', '/image/PinePods/PinePods Gen Z - 4.png'),
-('PinePods Ultimate', '/image/PinePods/PinePods Ultimate - 1.png'),
-('PinePods Ultimate', '/image/PinePods/PinePods Ultimate - 2.png'),
-('PinePods Ultimate', '/image/PinePods/PinePods Ultimate - 3.png'),
-('PinePods Ultimate', '/image/PinePods/PinePods Ultimate - 4.png'),
-('PinePods Ultimate', '/image/PinePods/PinePods Ultimate - 5.png'),
-('PinePods Ultimate', '/image/PinePods/PinePods Ultimate - 6.png');
+('PinePods Gen X', '../image/PinePods/PinePods Gen X - 1.png'),
+('PinePods Gen X', '../image/PinePods/PinePods Gen X - 2.png'),
+('PinePods Gen X', '../image/PinePods/PinePods Gen X - 3.png'),
+('PinePods Gen Y', '../image/PinePods/PinePods Gen Y - 1.png'),
+('PinePods Gen Y', '../image/PinePods/PinePods Gen Y - 2.png'),
+('PinePods Gen Y', '../image/PinePods/PinePods Gen Y - 3.png'),
+('PinePods Gen Z', '../image/PinePods/PinePods Gen Z - 1.png'),
+('PinePods Gen Z', '../image/PinePods/PinePods Gen Z - 2.png'),
+('PinePods Gen Z', '../image/PinePods/PinePods Gen Z - 3.png'),
+('PinePods Gen Z', '../image/PinePods/PinePods Gen Z - 4.png'),
+('PinePods Ultimate', '../image/PinePods/PinePods Ultimate - 1.png'),
+('PinePods Ultimate', '../image/PinePods/PinePods Ultimate - 2.png'),
+('PinePods Ultimate', '../image/PinePods/PinePods Ultimate - 3.png'),
+('PinePods Ultimate', '../image/PinePods/PinePods Ultimate - 4.png'),
+('PinePods Ultimate', '../image/PinePods/PinePods Ultimate - 5.png'),
+('PinePods Ultimate', '../image/PinePods/PinePods Ultimate - 6.png');
 
 CREATE TABLE IF NOT EXISTS Pineapple_Pencil (
     id INT(11) AUTO_INCREMENT PRIMARY KEY,
@@ -214,7 +214,7 @@ CREATE TABLE IF NOT EXISTS pencil_image_path (
 );
 
 INSERT INTO pencil_image_path (name, image_path) VALUES
-('Pineapple Pencil OG', '/image/Accessories/Pineapple Pencil/ Pineapple Pencil OG (Thumbnail).png'),
-('Pineapple Pencil Gen 2', '/image/Accessories/Pineapple Pencil/ Pineapple Pencil Gen 2 (Thumbnail).png'),
-('Pineapple Pencil Gen 3', '/image/Accessories/Pineapple Pencil/ Pineapple Pencil Gen 3 (Thumbnail).png'),
-('Pineapple Pencil Pro', '/image/Accessories/Pineapple Pencil/ Pineapple Pencil Pro (Thumbnail).png');
+('Pineapple Pencil OG', '../image/Accessories/Pineapple Pencil/ Pineapple Pencil OG (Thumbnail).png'),
+('Pineapple Pencil Gen 2', '../image/Accessories/Pineapple Pencil/ Pineapple Pencil Gen 2 (Thumbnail).png'),
+('Pineapple Pencil Gen 3', '../image/Accessories/Pineapple Pencil/ Pineapple Pencil Gen 3 (Thumbnail).png'),
+('Pineapple Pencil Pro', '../image/Accessories/Pineapple Pencil/ Pineapple Pencil Pro (Thumbnail).png');
