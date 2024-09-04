@@ -138,22 +138,22 @@ CREATE TABLE IF NOT EXISTS pad_image_path (
 );
 
 INSERT INTO pad_image_path (name, image_path) VALUES
-('PinePad Gamer', '../image/PinePhone/PinePad Gamer - 1.png'),
-('PinePad Gamer', '../image/PinePhone/PinePad Gamer - 2.png'),
-('PinePad Gamer', '../image/PinePhone/PinePad Gamer - 3.png'),
-('PinePad Gamer', '../image/PinePhone/PinePad Gamer - 4.png'),
-('PinePad OG', '../image/PinePhone/PinePad OG - 1.png'),
-('PinePad OG', '../image/PinePhone/PinePad OG - 2.png'),
-('PinePad OG', '../image/PinePhone/PinePad OG - 3.png'),
-('PinePad Pro', '../image/PinePhone/PinePad Pro - 1.png'),
-('PinePad Pro', '../image/PinePhone/PinePad Pro - 2.png'),
-('PinePad Pro', '../image/PinePhone/PinePad Pro - 3.png'),
-('PinePad Pro', '../image/PinePhone/PinePad Pro - 4.png'),
-('PinePad Pro', '../image/PinePhone/PinePad Pro - 5.png'),
-('PinePad Pro', '../image/PinePhone/PinePad Pro - 6.png'),
-('PinePad Smol', '../image/PinePhone/PinePad Smol - 1.png'),
-('PinePad Smol', '../image/PinePhone/PinePad Smol - 2.png'),
-('PinePad Smol', '../image/PinePhone/PinePad Smol - 3.png');
+('PinePad Gamer', '../image/PinePad/PinePad Gamer - 1.png'),
+('PinePad Gamer', '../image/PinePad/PinePad Gamer - 2.png'),
+('PinePad Gamer', '../image/PinePad/PinePad Gamer - 3.png'),
+('PinePad Gamer', '../image/PinePad/PinePad Gamer - 4.png'),
+('PinePad OG', '../image/PinePad/PinePad OG - 1.png'),
+('PinePad OG', '../image/PinePad/PinePad OG - 2.png'),
+('PinePad OG', '../image/PinePad/PinePad OG - 3.png'),
+('PinePad Pro', '../image/PinePad/PinePad Pro - 1.png'),
+('PinePad Pro', '../image/PinePad/PinePad Pro - 2.png'),
+('PinePad Pro', '../image/PinePad/PinePad Pro - 3.png'),
+('PinePad Pro', '../image/PinePad/PinePad Pro - 4.png'),
+('PinePad Pro', '../image/PinePad/PinePad Pro - 5.png'),
+('PinePad Pro', '../image/PinePad/PinePad Pro - 6.png'),
+('PinePad Smol', '../image/PinePad/PinePad Smol - 1.png'),
+('PinePad Smol', '../image/PinePad/PinePad Smol - 2.png'),
+('PinePad Smol', '../image/PinePad/PinePad Smol - 3.png');
 
 CREATE TABLE IF NOT EXISTS PinePods (
     id INT(11) AUTO_INCREMENT PRIMARY KEY,
