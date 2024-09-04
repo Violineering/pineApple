@@ -1,32 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Sign In to PineApple Store</title>
 </head>
-<body>
-    <header class="navbar">
-        <div class="navbar-container">
-            <a href="#" class="logo">
-                <img src="Bitten-PineApple1.jpg" alt="PineApple Logo" class="logo-img">
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="#">Store</a></li>
-                    <li><a href="#">Accessories</a></li>
-                    <li><a href="#">Support</a></li>
-                </ul>
-            </nav>
-            <div class="navbar-icons">
-                <a href="#" class="search-icon">🔍</a>
-                <a href="#" class="checkout-bag">🛒</a>
-            </div>
-        </div>
-    </header>
 
-    <div action="signin.php" class="container" id="signin-container">
+<body>
+    <?php include('includes/navigationHeader.php');?>
+
+    <div class="container" id="signin-container">
         <h1>Sign In to PineApple Store</h1>
         <form action="#" method="post" class="signin-form">
             <div class="input-group">
@@ -37,71 +24,16 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <button type="submit" nmae = "submit" class="btn" value = "Login">Sign In</button>
+            <button type="submit" class="btn">Sign In</button>
         </form>
         <div class="footer">
-            <a href="#">Forgot PineApple ID or password?</a>
+            <p>Do not have an account?</>
             <span>|</span>
-            <a href="#" id="create-id-link">Create PineApple ID</a>
+            <a href="SignUp.php" id="create-id-link">Create PineApple Account</a>
         </div>
     </div>
-
-    <div action="signup.php" class="container" id="create-id-form" style="display: none;">
-        <h1>Create PineApple ID</h1>
-        <form action="#" method="post" class="create-id-form">
-            <div class="input-group">
-                <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" name="fullname" required>
-            </div>
-            <div class="input-group">
-                <label for="new-email">Email Address</label>
-                <input type="email" id="new-email" name="new-email" required>
-            </div>
-            <div class="input-group">
-                <label for="new-password">Password</label>
-                <input type="password" id="new-password" name="new-password" required>
-            </div>
-            <button type="submit" name = "submit" class="btn" value = "Create">Create PineApple ID</button>
-        </form>
-        <div class="footer">
-            <a href="#" id="back-to-signin">Back to Sign In</a>
-        </div>
-    </div>
-
-    <script>
-        document.getElementById('create-id-link').onclick = function() {
-            document.getElementById('signin-container').style.display = 'none';
-            document.getElementById('create-id-form').style.display = 'block';
-        };
-        
-        document.getElementById('back-to-signin').onclick = function() {
-            document.getElementById('create-id-form').style.display = 'none';
-            document.getElementById('signin-container').style.display = 'block';
-        };
-    
-        // Validate Sign In Form
-        document.querySelector('.signin-form').onsubmit = function(e) {
-            let email = document.getElementById('email').value;
-            let password = document.getElementById('password').value;
-    
-            if (!email || !password) {
-                alert("Please fill in both fields.");
-                e.preventDefault(); // Prevent form submission
-            }
-        };
-    
-        // Validate Create PineApple ID Form
-        document.querySelector('.create-id-form').onsubmit = function(e) {
-            let fullname = document.getElementById('fullname').value;
-            let newEmail = document.getElementById('new-email').value;
-            let newPassword = document.getElementById('new-password').value;
-    
-            if (!fullname || !newEmail || !newPassword) {
-                alert("Please fill in all fields.");
-                e.preventDefault(); // Prevent form submission
-            }
-        };
-    </script>
-    
 </body>
+
+<?php include('includes/footer.php');?>
+
 </html>
