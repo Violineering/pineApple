@@ -9,28 +9,29 @@
                     <button class="dropbtn">Store</button>
                     <div class="dropdown-content">
                         <div class="section">
-                            <h3>Mac</h3>
-                            <a href="#">MacBook Air</a>
-                            <a href="#">MacBook Pro</a>
-                            <a href="#">iMac</a>
+                            <h3>PineBook</h3>
+                            <a href="#">PineBook King</a>
+                            <a href="#">PineBook Light</a>
                         </div>
                         <div class="section">
-                            <h3>iPhone</h3>
-                            <a href="#">iPhone 14</a>
-                            <a href="#">iPhone 13</a>
-                            <a href="#">iPhone SE</a>
+                            <h3>PinePhone</h3>
+                            <a href="#">PinePhone Pro Ultimate</a>
+                            <a href="#">PinePhone Pro Gamer</a>
+                            <a href="#">PinePhone Primitive</a>
+                            <a href="#">PinePhone OG</a>
+                            <a href="#">PinePhone Cutie</a>
                         </div>
                         <div class="section">
-                            <h3>iPad</h3>
-                            <a href="#">iPad Pro</a>
-                            <a href="#">iPad Air</a>
-                            <a href="#">iPad Mini</a>
+                            <h3>PinePad</h3>
+                            <a href="#">PinePad Pro</a>
+                            <a href="#">PinePad Gamer</a>
+                            <a href="#">PinePad OG</a>
+                            <a href="#">PinePad Smol</a>
                         </div>
                         <div class="section">
                             <h3>Other Products</h3>
-                            <a href="#">Apple TV</a>
-                            <a href="#">AirPods</a>
-                            <a href="#">Accessories</a>
+                            <a href="#">PinePods</a>
+                            <a href="#">Pineapple Pencil</a>                     
                         </div>
                     </div>
                 </div>
@@ -38,22 +39,18 @@
                     <button class="dropbtn">Accessories</button>
                     <div class="dropdown-content">
                         <div class="section">
-                            <h3>Apple Watch</h3>
-                            <a href="#">Series 8</a>
-                            <a href="#">SE</a>
-                            <a href="#">Bands</a>
+                            <h3>PinePods</h3>
+                            <a href="#">PinePods Ultimate</a>
+                            <a href="#">PinePods Gen Z</a>
+                            <a href="#">PinePods Gen Y</a>
+                            <a href="#">PinePods Gen X</a>
                         </div>
                         <div class="section">
-                            <h3>AirPods</h3>
-                            <a href="#">AirPods Pro</a>
-                            <a href="#">AirPods 3rd Gen</a>
-                            <a href="#">AirPods Max</a>
-                        </div>
-                        <div class="section">
-                            <h3>Cases & Covers</h3>
-                            <a href="#">iPhone Cases</a>
-                            <a href="#">iPad Cases</a>
-                            <a href="#">Mac Covers</a>
+                            <h3>Pineapple Pencil</h3>
+                            <a href="#">Pineapple Pencil Pro</a>
+                            <a href="#">Pineapple Pencil Gen 3</a>
+                            <a href="#">Pineapple Pencil Gen 2</a>
+                            <a href="#">Pineapple Pencil OG</a>
                         </div>
                     </div>
                 </div>
@@ -64,19 +61,11 @@
                             <h3>Customer Service</h3>
                             <a href="#">Contact Us</a>
                             <a href="#">Order Status</a>
-                            <a href="#">Returns</a>
-                        </div>
-                        <div class="section">
-                            <h3>Tech Support</h3>
-                            <a href="#">Troubleshooting</a>
-                            <a href="#">Repair</a>
-                            <a href="#">Manuals</a>
+                            <a href="#">Refunds</a>
                         </div>
                         <div class="section">
                             <h3>Warranty</h3>
-                            <a href="#">AppleCare</a>
-                            <a href="#">Coverage</a>
-                            <a href="#">Claims</a>
+                            <a href="#">PineAppleCare</a>
                         </div>
                     </div>
                 </div>
