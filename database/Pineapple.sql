@@ -120,16 +120,16 @@ CREATE TABLE IF NOT EXISTS PinePad (
 INSERT INTO PinePad (name, description, core, chipset, RAM, display, camera, battery, features, storage, color, price) VALUES
 ('PinePad Gamer', 'Optimized for gamers', '10 core', 'PINE P4', '16 GB', '11.0 inches Pine Ultra Retina Tandem OLED, 120Hz', '720p Camera', 'Li-Po 9290 mAh, non-removable battery', 
 '<ul><li>Hyper Liquid Cooling System</li><li>Adaptive AI Gaming Assist</li><li>Support fast wireless recharging (1 hour to full charge)</li></ul>',
-'256 GB, 512 GB, 1 TB', 'Black, White', 1299),
+'256 GB, 512 GB, 1 TB', 'Mint, Peach, White, Grey', 1299),
 ('PinePad OG', 'This is where all it started...', 'Dual-core', 'P16', '4 GB', ' 9.0 IPS LCD capacitive touchscreen', '480p Camera', 'Li-Po 7080 mAh, non-removable battery', 
 '<ul><li>The world''s first tablet to be created</li><li>Experiences PINE OS, the first-ever tablet app ecosystem</li></ul>',
-'32 GB, 64 GB', 'Black, White', 699),
+'32 GB, 64 GB', 'White, Yellow, Red, Blue', 699),
 ('PinePad Pro', 'Bulit for high performance', '8 core', 'PINE P4', '16 GB', '13.0 inches Pine Ultra Retina Tandem OLED, 120Hz', '1080p HD Camera', 'Li-Po 10290 mAh, non-removable battery', 
 '<ul><li>The world''s thinest tablet ever</li><li>Magnetic float display (float slightly above surfaces)</li><li>Built from lightweight & durable Vibranium metal (negates 99.99% of physical damage)</li></ul>', 
 '256 GB, 512 GB, 1 TB', 'Black, White', 999),
 ('PinePad Smol', 'Pocket-sized, easily portable', '6 core', 'PINE P3', '8 GB', '8.3 inches Pine Ultra Retina Tandem OLED, 120Hz', '720p Camera', 'Li-Po 6069 mAh, non-removable battery', 
 '<ul><li>Featherlight design (weighing less than 200 grams)</li><li>Optimized interface for smaller screen, easier navigation</li></ul>',
-'128 GB, 256 GB, 512 GB', 'Black, White', 899);
+'128 GB, 256 GB, 512 GB', 'Grey, White, Peach, Blue', 899);
 
 CREATE TABLE IF NOT EXISTS pad_image_path (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -146,10 +146,8 @@ INSERT INTO pad_image_path (name, image_path) VALUES
 ('PinePad OG', '../image/PinePad/PinePad OG - 2.png'),
 ('PinePad OG', '../image/PinePad/PinePad OG - 3.png'),
 ('PinePad Pro', '../image/PinePad/PinePad Pro - 1.png'),
-('PinePad Pro', '../image/PinePad/PinePad Pro - 2.png'),
 ('PinePad Pro', '../image/PinePad/PinePad Pro - 3.png'),
 ('PinePad Pro', '../image/PinePad/PinePad Pro - 4.png'),
-('PinePad Pro', '../image/PinePad/PinePad Pro - 5.png'),
 ('PinePad Pro', '../image/PinePad/PinePad Pro - 6.png'),
 ('PinePad Smol', '../image/PinePad/PinePad Smol - 1.png'),
 ('PinePad Smol', '../image/PinePad/PinePad Smol - 2.png'),
