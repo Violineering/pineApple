@@ -110,12 +110,29 @@
                         </div>
                         <div class="storage">
                             <?php
-                            $storages = explode(',', $product['storage']);
-                            foreach ($storages as $storage) {
+                            $storageOptions = explode(',', $product['storage']);
+                            $basePrice = $product['price'];
+
+                            // Assuming the first option is the base storage with no additional cost
+                            foreach ($storageOptions as $index => $storage) {
+                                $storage = trim($storage);
+                                $additionalPrice = 0;
+
+                                // Define additional price for each storage option except the first one
+                                if ($product['name'] == 'PinePhone OG') {
+                                    if ($index > 0) {
+                                        $additionalPrice = ($index * 50);
+                                    }
+                                } else {
+                                    if ($index > 0) {
+                                        $additionalPrice = ($index * 200);
+                                    }
+                                }                              
+                            
                                 echo '<label class="container">
-                                        <input type="radio" name="storage" value="' . trim($storage) . '" required>
-                                        <span class="checkmark"></span>' . trim($storage) . '
-                                    </label>';
+                                        <input type="radio" name="storage" value="' . $storage . '" data-price="' . $additionalPrice . '" required>
+                                        <span class="checkmark"></span>' . $storage . '
+                                      </label>';
                             }
                             ?>
                         </div>
@@ -137,14 +154,17 @@
                     </div>
 
                     <div class="pb">
-                        <h2 class="price">$<?php echo $product['price']; ?></h2>
+                        <h2 class="price" data-base-price="<?php echo $product['price']; ?>">$<?php echo $product['price']; ?></h2>
+                        <input type="hidden" name="price" value="<?php echo $product['price']; ?>">
                         <button type="submit" value="addToCart">Add to Cart</button>
                     </div>
+                    
                 </form>
             </div>
         </div>
     </main>
 
+    <!-- Change image transition -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             let images = <?php echo json_encode($imagePaths); ?>;
@@ -198,5 +218,37 @@
             });
         });
     </script>
+    <!-- Update price based on selected storage option -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const storageInputs = document.querySelectorAll('input[name="storage"]');
+            const priceElement = document.querySelector('#itemDetails-container .price');
+            const priceInput = document.querySelector('input[name="price"]');
+            
+            function updatePrice() {
+                let basePrice = parseFloat(priceElement.getAttribute('data-base-price'));
+                let selectedStorage = document.querySelector('input[name="storage"]:checked');
+            
+                if (selectedStorage) {
+                    let additionalPrice = parseFloat(selectedStorage.getAttribute('data-price'));
+                    let finalPrice = basePrice + additionalPrice;
+                    priceElement.textContent = `$${finalPrice.toFixed(2)}`;
+                    priceInput.value = finalPrice.toFixed(2); // Update hidden input value
+                } else {
+                    priceElement.textContent = `$${basePrice.toFixed(2)}`;
+                    priceInput.value = basePrice.toFixed(2); // Update hidden input value
+                }
+            }
+        
+            storageInputs.forEach(input => {
+                input.addEventListener('change', updatePrice);
+            });
+        
+            // Initialize the price on page load
+            updatePrice();
+        });
+    </script>
+    
+
 </body>
 </html>

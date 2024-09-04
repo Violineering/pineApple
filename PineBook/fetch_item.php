@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // Get the product name from the query parameter
-$productName = isset($_GET['product']) ? $_GET['product'] : 'PineBook Lite'; // Default to PineBook Lite if not provided
+$productName = isset($_GET['product']) ? $_GET['product'] : 'PineBook Light'; 
 
 // SQL query to fetch product details
 $sql = "SELECT * FROM PineBook WHERE name = ?";
