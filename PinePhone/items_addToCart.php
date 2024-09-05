@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // $query = "INSERT INTO orders (product_name, storage, color, price) VALUES (?, ?, ?, ?)";
     // $stmt = $conn->prepare($query);
-    // $stmt->bind_param("ssss", $product_name, $storage, $color, price);
+    // $stmt->bind_param("sssd", $product_name, $storage, $color, price);
 
     // if ($stmt->execute()) {
     //     echo "Order successfully placed!";
