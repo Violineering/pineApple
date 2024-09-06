@@ -53,6 +53,9 @@
                             <a href="/pineApple/ItemList/Accessories/Pineapple Pencil.php" class="open-button">
                                 <h3>Pineapple Pencil</h3>
                             </a>
+                            <a href="/pineApple/ItemList/Accessories/Pineapple.php" class="open-button">
+                                <h3>Pineapple</h3>
+                            </a>
                         </div>
                     </div>
                 </div>
