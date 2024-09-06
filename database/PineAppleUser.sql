@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS pineappleusers CHARACTER SET utf8 COLLATE utf8_gen
 USE pineappleusers;
 
 CREATE TABLE IF NOT EXISTS users (
-    pineapple_id INT AUTO_INCREMENT PRIMARY KEY,
+    pineapple_id VARCHAR(50) PRIMARY KEY,
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     phoneNo VARCHAR(255) NOT NULL,
