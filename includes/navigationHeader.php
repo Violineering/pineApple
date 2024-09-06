@@ -73,7 +73,7 @@
             <div class="navbar-icons">
                 <a href="#" class="fa fa-search"></a>
                 <a href="/pineApple/CartList.php" class="fa fa-shopping-cart"></a>
-                <a href="/pineApple/profile.php" class="fa fa-user"></a>
+                <a href="/pineApple/Profile.php" class="fa fa-user"></a>
             </div>
         </div>
     </header>
