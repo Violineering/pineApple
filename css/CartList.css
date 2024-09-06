@@ -1,0 +1,137 @@
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f5f5f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        #cart_wrapper {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 80px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .cartItems {
+            flex-direction: column;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            flex-direction: row;
+            width: 100%;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .cart-item-details {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .cart-item-details h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .cart-item-details p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .cart-controls {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 150px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity-controls button {
+            background-color: black;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .quantity-controls input {
+            width: 50px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        .btn-delete {
+            background-color: white;
+            border: 1px solid red;
+            color: red;
+            font-size: 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .btn-delete:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-payment {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: black;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px；
+        }
+
+        .btn-payment:hover {
+           transform: scale(1.05);
+        }
+
+        .total-price {
+            text-align: right;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+   
