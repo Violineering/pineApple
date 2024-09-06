@@ -32,7 +32,7 @@
 
     <div class="container" id="create-id-form">
         <h1>Create PineApple Account</h1>
-        
+
         <!-- Display Success Message -->
         <?php if (isset($_GET['signup']) && $_GET['signup'] === 'success'): ?>
             <p class="success">Registration successful! You can now <a href="Login.php">Sign In</a>.</p>
@@ -50,7 +50,7 @@
                 <label for="phoneNo">Phone Number</label>
                 <input type="text" id="phoneNo" name="phoneNo" value="<?php echo isset($_SESSION['form_data']['phoneNo']) ? htmlspecialchars($_SESSION['form_data']['phoneNo']) : ''; ?>" required>
                 <span class="error">
-                    <?php echo isset($_SESSION['errors']['phone']) ? htmlspecialchars($_SESSION['errors']['phoneNo']) : ''; ?>
+                    <?php echo isset($_SESSION['errors']['phoneNo']) ? htmlspecialchars($_SESSION['errors']['phoneNo']) : ''; ?>
                 </span>
             </div>
             <div class="input-group">
