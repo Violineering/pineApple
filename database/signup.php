@@ -45,8 +45,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Validate Phone Number
-    if (empty($phoneNo) || !preg_match('/^\d{10}$/', $phoneNo)) {
-        $errors['phoneNo'] = 'Phone number is required and must be 10 digits.';
+    if (empty($phoneNo) || !preg_match('/^\d{3}-\d{3}-\d{4}$/', $phoneNo)) {
+        $errors['phoneNo'] = 'Phone number is required and must be a valid phone number (e.g., 123-456-7890).';
     }
 
     // Validate Birthday
@@ -62,8 +62,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // If no errors, insert data into database
     if (empty($errors)) {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT); // Hash the password
-        $stmt = $conn->prepare("INSERT INTO users (pineapple_id, phoneNo, birthday, email, password) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssss", $pineapple_id, $phoneNo, $birthday, $email, $hashed_password);
+
+        // Set the default profile picture
+        $default_profilepic = '../image/default_profile_pic.jpg'; // Change this to your default image filename
+
+        $stmt = $conn->prepare("INSERT INTO users (pineapple_id, phoneNo, birthday, email, password, profilepic) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssss", $pineapple_id, $phoneNo, $birthday, $email, $hashed_password, $default_profilepic);
 
         if ($stmt->execute()) {
             // Successful signup, clear session data and redirect with success flag
