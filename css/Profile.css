@@ -106,7 +106,8 @@ input:focus {
     margin: 10px auto;
     padding: 8px 12px;
     width: 60%;
-    background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Semi-transparent background */
     color: black;
     border-radius: 5px;
     cursor: pointer;
@@ -119,4 +120,15 @@ input:focus {
 
 .profile-pic input[type="file"] {
     display: none;
+}
+
+.logout-button {   
+    font-weight: bold;
+    border-color: darkgray;
+}
+
+.logout-btn-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: right;
 }
