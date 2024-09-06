@@ -31,7 +31,7 @@ if ($result->num_rows > 0) {
     // Verify password
     if (password_verify($password, $row['password'])) {
         // Successful login
-        $_SESSION['user'] = $pineapple_id; // Set session variable
+        $_SESSION['session_id'] = $pineapple_id; // Set session variable
         header("Location: ../Index.php"); // Redirect to the main page
         exit();
     }
