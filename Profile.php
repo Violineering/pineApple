@@ -25,10 +25,10 @@
                 <input type="file" id="profilePicInput" name="profilePic" accept="image/*">
             </div>
 
-            <!-- Username -->
+            <!-- PineApple ID -->
             <div class="input-group">
-                <label for="UserID">UserID</label>
-                <input type="text" id="UserID" name="UserID" value="JohnDoe" readonly>
+                <label for="PineApple ID">UserID</label>
+                <input type="text" id="PineApple ID" name="PineApple ID" value="JohnDoe" readonly>
             </div>
 
             <!-- Email -->
