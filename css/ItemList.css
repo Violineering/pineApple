@@ -289,7 +289,7 @@ section {
     box-sizing: border-box;
     width: 600px;
     padding: 10px;
-    height: 600px;
+    height: auto;
     border-radius: 10px;
     box-shadow: 4px 6px 14px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
 }
