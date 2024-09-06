@@ -27,7 +27,7 @@
 
             <!-- PineApple ID -->
             <div class="input-group">
-                <label for="PineApple ID">UserID</label>
+                <label for="PineApple ID">PineApple ID</label>
                 <input type="text" id="PineApple ID" name="PineApple ID" value="JohnDoe" readonly>
             </div>
 
