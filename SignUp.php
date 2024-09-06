@@ -50,12 +50,12 @@
                 <label for="phoneNo">Phone Number</label>
                 <input type="text" id="phoneNo" name="phoneNo" value="<?php echo isset($_SESSION['form_data']['phoneNo']) ? htmlspecialchars($_SESSION['form_data']['phoneNo']) : ''; ?>" required>
                 <span class="error">
-                    <?php echo isset($_SESSION['errors']['phoneNo']) ? htmlspecialchars($_SESSION['errors']['phoneNo']) : ''; ?>
+                    <?php echo isset($_SESSION['errors']['phone']) ? htmlspecialchars($_SESSION['errors']['phoneNo']) : ''; ?>
                 </span>
             </div>
             <div class="input-group">
-                <label for="birthday">Birthday (YYYY-MM-DD)</label>
-                <input type="text" id="birthday" name="birthday" value="<?php echo isset($_SESSION['form_data']['birthday']) ? htmlspecialchars($_SESSION['form_data']['birthday']) : ''; ?>" required>
+                <label for="birthday">Birthday</label>
+                <input type="date" id="birthday" name="birthday" value="<?php echo isset($_SESSION['form_data']['birthday']) ? htmlspecialchars($_SESSION['form_data']['birthday']) : ''; ?>" required>
                 <span class="error">
                     <?php echo isset($_SESSION['errors']['birthday']) ? htmlspecialchars($_SESSION['errors']['birthday']) : ''; ?>
                 </span>
