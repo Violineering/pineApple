@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="../css/styles.css">
 <header class="navbar clearfix">
         <div class="navbar-container">
-            <a href="#" class="logo">
-            <img src="../image/logo-image.png" class="logo-img">
+            <a href="index.php" class="logo">
+            <img src="../image/logo-image.png" class="logo-img">       
             </a>
             <nav>
                 <div class="dropdown">
@@ -59,7 +59,7 @@
                     <div class="dropdown-content">
                         <div class="section">
                             <h3>Customer Service</h3>
-                            <a href="#">Contact Us</a>
+                            <a href="/pineApple/Contact.php">Contact Us</a>
                             <a href="#">Order Status</a>
                             <a href="#">Refunds</a>
                         </div>
@@ -72,7 +72,8 @@
             </nav>
             <div class="navbar-icons">
                 <a href="#" class="fa fa-search"></a>
-                <a href="#" class="fa fa-shopping-cart"></a>
+                <a href="/pineApple/CartList.php" class="fa fa-shopping-cart"></a>
+                <a href="/pineApple/profile.php" class="fa fa-user"></a>
             </div>
         </div>
     </header>
