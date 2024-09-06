@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/NavigationHeader.css">
 <header class="navbar clearfix">
         <div class="navbar-container">
             <a href="index.php" class="logo">
