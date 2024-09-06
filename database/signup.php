@@ -1,43 +1,88 @@
 <?php
-include 'database/dbConn.php';
+session_start();
 
-//Initialize variables
-$fullname = $email = $password = "";
-$errors = [];
+// Database connection details
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "pineappleusers";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $fullname = $_POST['fullname'];
-    $email = $_POST['new-email'];
-    $password = $_POST['new-password'];
-    $created_at = date("Y-m-d H:i:s");
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Hash the password
-    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-
-    // Validate inputs
-    if($_POST['submit'] == 'Create'){
-        if(empty($fullname)){
-            $errors[] = "Fullname is required.";
-        }
-        if(empty($email)){
-            $errors[] = "Email is required";
-        }
-        if(empty($password)){
-            $errors[] = "Password is required";
-        }
-    }
-
-    // Insert into database
-    if(empty($errors)){
-        $sql = "INSERT INTO users (username, email, password_hash, created_at) VALUES ('$fullname', '$email', '$passwordHash', '$created_at')";
-
-        if($conn->query($sql) === TRUE){
-            echo "New user created successfully";     
-    }else{
-        echo "Error: ". $sql . "<br>" . $conn->error;
-    }
-    }
-   
-    $conn->close();
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+
+// Initialize arrays to store validation errors and form data
+$errors = [];
+$form_data = $_POST;
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve form data
+    $pineapple_id = trim($_POST['pineapple_id']);
+    $phoneNo = trim($_POST['phoneNo']);
+    $birthday = trim($_POST['birthday']);
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
+
+    // Validate PineAppleID and email
+    $stmt = $conn->prepare("SELECT * FROM users WHERE pineapple_id = ? OR email = ?");
+    $stmt->bind_param("ss", $pineapple_id, $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        if ($row['pineapple_id'] == $pineapple_id) {
+            $errors['pineapple_id'] = "PineApple ID already exists. Please choose a different one.";
+        }
+        if ($row['email'] == $email) {
+            $errors['email'] = "Email already registered. Please use a different email address.";
+        }
+    }
+
+    // Validate Phone Number
+    if (empty($phoneNo) || !preg_match('/^\d{10}$/', $phoneNo)) {
+        $errors['phoneNo'] = 'Phone number is required and must be 10 digits.';
+    }
+
+    // Validate Birthday
+    if (empty($birthday) || !DateTime::createFromFormat('Y-m-d', $birthday)) {
+        $errors['birthday'] = 'Birthday is required and must be in YYYY-MM-DD format.';
+    }
+
+    // Validate Password
+    if (empty($password)) {
+        $errors['password'] = 'Password is required.';
+    }
+
+    // If no errors, insert data into database
+    if (empty($errors)) {
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT); // Hash the password
+        $stmt = $conn->prepare("INSERT INTO users (pineapple_id, phoneNo, birthday, email, password) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssss", $pineapple_id, $phoneNo, $birthday, $email, $hashed_password);
+
+        if ($stmt->execute()) {
+            // Successful signup, clear session data and redirect with success flag
+            unset($_SESSION['errors']);
+            unset($_SESSION['form_data']);
+            header("Location: ../signup.php?signup=success");
+            exit();
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+    } else {
+        // Pass errors back to the form
+        $_SESSION['errors'] = $errors;
+        $_SESSION['form_data'] = $form_data; // Save form data to preserve user input
+        header("Location: ../signup.php");
+        exit();
+    }
+}
+
+// Close the database connection
+$conn->close();
 ?>

@@ -4,21 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <title>Sign In to PineApple Store</title>
 </head>
+<style>
+    .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+</style>
 
 <body>
-    <?php include('includes/navigationHeader.php');?>
+    <?php include('includes/navigationHeader.php'); ?>
 
     <div class="container" id="signin-container">
         <h1>Sign In to PineApple Store</h1>
-        <form action="#" method="post" class="signin-form">
+        
+        <!-- Display Error Message -->
+        <?php if (isset($_GET['error']) && $_GET['error'] === 'invalid'): ?>
+            <p class="error">PineApple ID or password is invalid.</p>
+        <?php endif; ?>
+
+        <form action="database/LoginValidation.php" method="post" class="signin-form">
             <div class="input-group">
-                <label for="email">PineApple ID or Email Address</label>
-                <input type="email" id="email" name="email" required>
+                <label for="email">PineApple ID</label>
+                <input type="text" id="email" name="pineapple_id" required>
             </div>
             <div class="input-group">
                 <label for="password">Password</label>
@@ -27,13 +38,13 @@
             <button type="submit" class="btn">Sign In</button>
         </form>
         <div class="footer">
-            <p>Do not have an account?</>
+            <p>Do not have an account?</p>
             <span>|</span>
             <a href="SignUp.php" id="create-id-link">Create PineApple Account</a>
         </div>
     </div>
 </body>
 
-<?php include('includes/footer.php');?>
+<?php include('includes/footer.php'); ?>
 
 </html>
