@@ -141,5 +141,7 @@ session_start();
 
     <!-- Update price based on selected storage option -->
     <script src="../updatePrice.js"></script>
+
+    <script src="../windowScroll.js"></script>
 </body>
 </html>
