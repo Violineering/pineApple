@@ -345,6 +345,10 @@ section {
     width: 30vw;
 }
 
+#feature{
+    padding-left:12px;
+}
+
 #feature, #feature ul{
     line-height: 2.0;
 }
