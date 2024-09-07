@@ -44,17 +44,27 @@ CREATE TABLE IF NOT EXISTS orders_confirmed (
 CREATE TABLE IF NOT EXISTS payment_details (
     id INT AUTO_INCREMENT PRIMARY KEY,
     order_list_id INT NOT NULL,
-    full_name VARCHAR(255) NOT NULL,
+    -- Personal information
     email VARCHAR(100) NOT NULL,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
     address VARCHAR(255) NOT NULL,
     city VARCHAR(100) NOT NULL,
-    state VARCHAR(100) NOT NULL,
-    zip VARCHAR(20) NOT NULL,
+    country VARCHAR(100) NOT NULL,
+    region VARCHAR(100) NOT NULL,
+    phoneNo VARCHAR(255) NOT NULL,
+    zip VARCHAR(255) NOT NULL,
+    -- Payment information
     name_on_card VARCHAR(255) NOT NULL,
     credit_card_number VARCHAR(20) NOT NULL,
-    exp_month INT NOT NULL,
-    exp_year INT NOT NULL,
-    cvv VARCHAR(4) NOT NULL,
+    exp_month VARCHAR(20) NOT NULL,
+    exp_year INT(4) NOT NULL,
+    cvv INT(3) NOT NULL,
+    -- Pricing information
+    subtotal DECIMAL(10, 2) NOT NULL,
+    shipping DECIMAL(10, 2) NOT NULL,
+    sales_tax DECIMAL(10, 2) NOT NULL,
+    total_price DECIMAL(10, 2) NOT NULL,
     FOREIGN KEY (order_list_id) REFERENCES orders_confirmed(order_list_id) 
 );
 
