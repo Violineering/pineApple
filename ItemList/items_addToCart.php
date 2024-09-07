@@ -25,18 +25,54 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("ssssd", $pineapple_id, $product_name, $storage, $color, $price);
 
     if ($stmt->execute()) {
-        echo "Order successfully placed!";
+        echo '
+        <div class="overlay" id="overlay"></div>
+        <div class="popup" id="popup">
+            <div class="success-icon">✔️</div>
+            <h2>Product has been successfully added to your cart!</h2>
+            <p>
+                ' . $product_name . '<br>
+                Storage: ' . $storage . '<br>
+                Color: ' . $color . '<br>
+                Price: $' . $price . '
+            </p>
+            <h4>Click anywhere to return to the previous page</h4>
+        </div>
+
+        <script>
+            function showPopup() {
+                document.getElementById("popup").style.display = "block";
+                document.getElementById("overlay").style.display = "block";
+                document.getElementById("popup").classList.add("show-popup"); // Add animation
+            }
+
+            function closePopup(event) {
+                const popup = document.getElementById("popup");
+                if (event.target !== popup && !popup.contains(event.target)) {
+                    popup.classList.remove("show-popup");
+                    setTimeout(() => {
+                        popup.style.display = "none";
+                        document.getElementById("overlay").style.display = "none";
+                    }, 300); // Wait for the animation to finish
+                }
+            }
+
+            window.onload = function() {
+                showPopup();
+
+                // Automatically go back to the previous page after 5 seconds
+                setTimeout(function() {
+                    window.history.go(-2);
+                }, 3000);
+            };
+
+            document.getElementById("overlay").addEventListener("click", closePopup);
+        </script>
+    ';
+
     } else {
         echo "Error: " . $stmt->error;
     }
-
-    echo "Order created successfully!<br>";
-    echo 
-        "Pineapple ID: " . $pineapple_id . "<br>" .
-        "Product Name: " . $product_name . "<br>" .
-        "Storage: " . $storage . "<br>" .
-        "Color: " . $color . "<br>" .
-        "Price: " . $price;
 
     // $stmt->close();
     $conn->close();

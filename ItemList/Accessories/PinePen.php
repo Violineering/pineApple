@@ -9,9 +9,12 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/NavigationHeader.css">
     <link rel="stylesheet" href="../../css/ItemList.css">
+    <link rel="stylesheet" href="../../css/Popup.css">
     <title>PinePen</title>
 </head>
 <body>
+    <?php include('../items_addToCart.php') ?>
+
     <!--ItemList-->
     <div class = "section_a">
         <section>
@@ -100,7 +103,6 @@ session_start();
                                 <button type="submit" name="addToCart">Add to Cart</button>
                             </form>
                         </div>
-                        <?php include('../items_addToCart.php') ?>
                     </div>
                 </div>
             </div>
