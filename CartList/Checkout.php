@@ -87,7 +87,7 @@
                 <hr>
                 <p>Subtotal: $<span id="subtotal"></span></p>
                 <p>Shipping: $<span id="shippingCost"></span></p>
-                <p>Sales Tax: $<span id="salesTax"></span></p>
+                <p>Sales Tax (6%): $<span id="salesTax"></span></p>
                 <hr>
                 <p class="total">Total: $<span id="total"></span></p>
             </div>
