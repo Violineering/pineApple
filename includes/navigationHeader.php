@@ -76,10 +76,61 @@
                 </div>
             </nav>
             <div class="navbar-icons">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search..." onkeyup="searchSuggestions()">
+                </div>
                 <a href="#" class="fa fa-search"></a>
-                <a href="/pineApple/CartList" class="fa fa-shopping-cart"></a>
+                <div class="icon-cart">
+                    <a href="/pineApple/CartList" class="fa fa-shopping-cart"></a>
+                    <span id="cart-quantity">0</span>
+                </div>
                 <a href="/pineApple/Profile.php" class="fa fa-user"></a>
             </div>
         </div>
     </header>
+
+
+<?php
+// Database connection parameters
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "pineappleUsers";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$pineapple_id = $_SESSION['session_id'];
+
+$query = "SELECT quantity FROM orders_in_cart WHERE pineapple_id = ? ORDER BY id";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("s", $pineapple_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+$totalQuantity = 0;
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $quantity = $row['quantity'];
+        $totalQuantity += $quantity;
+    }
+}
+
+$_SESSION['totalQuantity'] = $totalQuantity;
+$stmt->close();
+$conn->close();
+?>
+
+<script>
+    // Update the span with the quantity value from PHP
+    document.getElementById("cart-quantity").innerText = "<?php echo $totalQuantity; ?>";
+</script>
+
+
     

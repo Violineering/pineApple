@@ -121,3 +121,18 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+.icon-cart span{
+    display: flex;
+    font-size: 10px;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    position: relative;
+    top: -65%;
+    right: -34px;
+}
