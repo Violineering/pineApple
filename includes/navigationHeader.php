@@ -3,7 +3,7 @@
 <header class="navbar clearfix">
         <div class="navbar-container">
             <a href="index.php" class="logo">
-            <img src="../../image/logo-image.png" class="logo-img">       
+            <img src="/pineApple/image/logo-image.png" class="logo-img">
             </a>
             <nav>
                 <div class="dropdown">
@@ -50,8 +50,8 @@
                     <button class="dropbtn">Accessories</button>
                     <div class="dropdown-content">
                         <div class="section">
-                            <a href="/pineApple/ItemList/Accessories/Pineapple Pencil.php" class="open-button">
-                                <h3>Pineapple Pencil</h3>
+                            <a href="/pineApple/ItemList/Accessories/PinePen.php" class="open-button">
+                                <h3>PinePen</h3>
                             </a>
                             <a href="/pineApple/ItemList/Accessories/Pineapple.php" class="open-button">
                                 <h3>Pineapple</h3>
@@ -64,7 +64,7 @@
                     <div class="dropdown-content">
                         <div class="section">
                             <h3>Customer Service</h3>
-                            <a href="/pineApple/Contact.php">Contact Us</a>
+                            <a href="/pineApple/Contact Us">Contact Us</a>
                             <a href="#">Order Status</a>
                             <a href="#">Refunds</a>
                         </div>
@@ -77,7 +77,7 @@
             </nav>
             <div class="navbar-icons">
                 <a href="#" class="fa fa-search"></a>
-                <a href="/pineApple/CartList.php" class="fa fa-shopping-cart"></a>
+                <a href="/pineApple/CartList" class="fa fa-shopping-cart"></a>
                 <a href="/pineApple/Profile.php" class="fa fa-user"></a>
             </div>
         </div>
