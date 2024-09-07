@@ -1,6 +1,7 @@
 <?php 
 session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,105 +24,90 @@ session_start();
         <div class="total-price">
             Total Price: $<span id="totalPrice"></span>
         </div>
-        <button class="btn-payment" onclick="navigateToPayment()">Proceed to Payment</button>
+
+        <button class="btn-payment" onclick="storeCartDataAndNavigate()">Proceed to Payment</button>
     </div>
 
     <script>
-        // Function to change quantity with AJAX
         function changeQuantity(event, change) {
             const itemElement = event.target.closest('.cart-item');
-            const itemId = itemElement.getAttribute('data-item-id'); // Use product id for unique identifier
+            const itemId = itemElement.getAttribute('data-item-id');
             const quantityInput = itemElement.querySelector('input[type="text"]');
             let quantity = parseInt(quantityInput.value, 10);
             quantity += change;
-            if (quantity < 1) quantity = 1; // Prevent negative or zero quantity
+            if (quantity < 1) quantity = 1;
             quantityInput.value = quantity;
-        
-            // AJAX request to update the quantity in the database
+
             const xhr = new XMLHttpRequest();
             xhr.open("POST", "updateQuantity.php", true);
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhr.onload = function() {
                 if (xhr.status == 200) {
-                    updateTotalPrice(); // Update total price after successful database update
+                    updateTotalPrice();
                 }
             };
             xhr.send(`item_id=${itemId}&quantity=${quantity}`);
         }
-        
-        // Function to remove item with AJAX
+
         function removeItem(event) {
             const itemElement = event.target.closest('.cart-item');
-            const itemId = itemElement.getAttribute('data-item-id'); // Use product id for unique identifier
-        
-            // AJAX request to remove the item from the database
+            const itemId = itemElement.getAttribute('data-item-id');
+
             const xhr = new XMLHttpRequest();
             xhr.open("POST", "removeItem.php", true);
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhr.onload = function() {
                 if (xhr.status == 200) {
-                    itemElement.remove(); // Remove the item from the DOM
-                    updateTotalPrice();   // Update total price after removal
+                    itemElement.remove();
+                    updateTotalPrice();
                 }
             };
-            xhr.send(`item_id=${itemId}`); // Send the unique id
+            xhr.send(`item_id=${itemId}`);
         }
-        
-        // Function to update total price
+
         function updateTotalPrice() {
-            console.log("Updating total price..."); // Debugging line
             let totalPrice = 0;
             const cartItems = document.querySelectorAll('.cart-item');
-            
+
             cartItems.forEach(item => {
-                // Select the price element by its class
                 const priceElement = item.querySelector('.cart-item-details h3.price');
-            
                 if (priceElement) {
-                    // Extract and parse the price
                     const priceText = priceElement.textContent.replace('Price: $', '');
                     const price = parseFloat(priceText);
-                
-                    if (isNaN(price)) {
-                        console.error("Invalid price format:", priceText);
-                        return;
-                    }
-                
-                    // Get and parse the quantity
+                    if (isNaN(price)) return;
+
                     const quantity = parseInt(item.querySelector('input[type="text"]').value, 10);
-                
-                    if (isNaN(quantity) || quantity < 1) {
-                        console.error("Invalid quantity:", quantity);
-                        return;
-                    }
-                
-                    // Add to total price
+                    if (isNaN(quantity) || quantity < 1) return;
+
                     totalPrice += price * quantity;
-                } else {
-                    console.error("Price element not found for item:", item);
                 }
             });
-            
-            console.log("Total price calculated:", totalPrice); // Debugging line
+
             document.getElementById('totalPrice').textContent = totalPrice.toFixed(2);
         }
-        
-        // Show total price when the page is loaded
+
+        function storeCartDataAndNavigate() {
+            const cartItems = [];
+            document.querySelectorAll('.cart-item').forEach(item => {
+                cartItems.push({
+                    id: item.getAttribute('data-item-id'),
+                    name: item.querySelector('.cart-item-details h3').textContent,
+                    storage: item.querySelector('.cart-item-details p:nth-of-type(1)').textContent.replace('Storage: ', ''),
+                    color: item.querySelector('.cart-item-details p:nth-of-type(2)').textContent.replace('Color: ', ''),
+                    price: item.querySelector('.cart-item-details h3.price').textContent.replace('Price: $', ''),
+                    quantity: item.querySelector('input[type="text"]').value
+                });
+            });
+            sessionStorage.setItem('cartData', JSON.stringify(cartItems));
+            window.location.href = 'checkout.php';
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             updateTotalPrice();
         });
-        
-        // Function to navigate to payment page
-        function navigateToPayment() {
-            window.location.href = 'payment.html'; // Change this to your actual payment page URL
-        }
-
-        // Function to navigate to payment page
-        function navigateToPayment() {
-            window.location.href = 'payment.html'; // Change this to your actual payment page URL
-        }
     </script>
-</body>
-<?php include('../includes/footer.php'); ?>
 
+    <?php include('../includes/footer.php'); ?>
+
+</body>
 </html>

@@ -1,9 +1,10 @@
 <?php
+
 // Database connection parameters
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "pineappleusers";
+$dbname = "pineappleUsers";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -28,7 +29,9 @@ $stmt->bind_param("s", $pineapple_id);
 $stmt->execute();
 $result = $stmt->get_result();
 
-// Check if any items are in the cart
+// Initialize cart data array
+$cartData = [];
+
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $formattedProductName = formatProductName($row['product_name']);
@@ -49,7 +52,20 @@ if ($result->num_rows > 0) {
         echo '<button class="btn-delete" onclick="removeItem(event)">Delete</button>';
         echo '</div>';
         echo '</div>';
+
+        // Store item in session cart data
+        $cartData[] = [
+            'id' => $row['id'],
+            'product_name' => $row['product_name'],
+            'storage' => $row['storage'],
+            'color' => $row['color'],
+            'price' => $row['price'],
+            'quantity' => $row['quantity']
+        ];
     }
+
+    // Store cart data in session
+    $_SESSION['cartData'] = $cartData;
 } else {
     echo "Your cart is empty.";
 }
