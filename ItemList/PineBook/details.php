@@ -1,4 +1,8 @@
-<?php include('../fetch_item.php') ?>
+<?php 
+include('../fetch_item.php');
+
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">

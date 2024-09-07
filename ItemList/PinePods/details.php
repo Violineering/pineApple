@@ -1,4 +1,8 @@
-<?php include('../fetch_item.php') ?>
+<?php 
+include('../fetch_item.php');
+
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +56,7 @@
             </div>
 
             <div id="selectionSection">
-                <form action="items_addToCart.php" method="POST">
+                <form action="" method="POST">
                 <input type="hidden" name="product_name" value="<?php echo $product['name']; ?>">
                 <input type="hidden" name="storage" value="N/A">
                 <input type="hidden" name="color" value="N/A"/>
