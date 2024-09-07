@@ -373,7 +373,7 @@ section {
 }
 
 #featureContent.open {
-    max-height: 800px; 
+    max-height: 1500px; 
     margin-bottom:50px;
     padding-bottom:25px;
     border-bottom: 0.05px solid gray;
@@ -390,7 +390,6 @@ section {
     list-style-type: none;
     font-size: 20px;
     margin: 10px;
-    height: auto;
 }
 
 #deviceSection p {
