@@ -8,106 +8,23 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",  "Helvetica Neue", Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     background-color: #f5f5f7;
     overflow-x: hidden;
-
-}
-
-.navbar {
-    background-color: #ffffff;
-    border-bottom: 1px solid #eaeaea;
-    padding: 10px 20px;    
-    display:flex;
-    align-items:center;
-    justify-content: space-between;
-    padding: 20px 10px; /* Correct padding syntax */
-}
-
-.navbar-container {
-    display: flex;
-    justify-content: space-between; /* Distributes space between logo and icons */
-    align-items: center;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.nav-box {
-    flex : 1;
-    padding: 10px;
-}
-
-.navbar-logo {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Aligns the icons to the left */
-    flex: 1;
-}
-
-.logo {
-    font-size: 24px;
-    color: #333;
-    text-decoration: none;
-    text-align: left;
-}
-
-.navbar-pages {
-    align-items: center;
-}
-
-.list-page {
-    flex: 1; /* All items will have equal width */
-    text-align: center;
-    padding: 10px;
-}
-
-.navbar-icons {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Aligns the icons to the right */
-}
-
-.navbar-icons svg {
-    margin-left: 20px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #333;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav a {
-    color: #333;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 5px 0;
-    transition: all 0.1s ease;
-}
-
-nav a:hover {
-    color: #007aff;
-    border-bottom: 2px solid #007aff;
-    padding-bottom: 10px; /* Adjust padding on hover for expansion effect */
 }
 
 .container {
     background-color: #ffffff;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px#eaeaea;
+    box-shadow: 0 2px 10px #eaeaea;
     margin: 20px auto;
 }
 
-h1 {
+h1 {    
     margin-bottom: 20px;
     font-size: 24px;
+    font-weight: bold;
     text-align: center;
     color: #333;
 }
@@ -122,23 +39,6 @@ label {
     margin-bottom: 5px;
     font-size: 14px;
     color: #555;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
-    border-color: #007aff;
-    outline: none;
 }
 
 .btn {
@@ -156,46 +56,8 @@ input[type="password"]:focus {
     background-color: #0051a8;
 }
 
-.footer {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-}
-
-.footer a {
-    color: #007aff;
-    text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
-.logo-img {
-    max-width: 60px; /* Set max width as necessary */
-    height: 40px; /* Maintain aspect ratio */
-}
-
-svg{
+svg {
     width: 30px;
-}
-
-.icon-cart{
-    position: relative;
-}
-
-.icon-cart span{
-    display: flex;
-    width: 15px;
-    height: 15px;
-    background-color: red;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    border-radius: 50%;
-    position: absolute;
-    top: -20%;
-    right: -7px;
 }
 
 section {
@@ -203,47 +65,47 @@ section {
     animation: fadeInUp 2s ease-out;
 }
 
-.section_a{
+.section_a {
     margin-top: 50px;
-    padding-top:50px;
+    padding-top: 50px;
     border-radius: 10px;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
     background-color: #ffffff;
     padding-bottom: 200px;
 }
 
-.section_b{
-    padding-top:50px;
-    
+.section_b {
+    padding-top: 50px;
 }
-.section-content{
+
+.section-content {
     padding-bottom: 50px;
 }
 
-.section-header-row{
+.section-header-row {
     display: flex;
     justify-content: space-between;
 }
 
-.section-header-a{
-    text-align:left;
-    font-size:80px;
-    color:black;
+.section-header-a {
+    text-align: left;
+    font-size: 80px;
+    color: black;
 }
 
-.section-header-b{
+.section-header-b {
     line-height: 1.17;
-    font-size:30px;
-    font-weight:600;
-    padding-right:100px;
-    padding-top:15px;
+    font-size: 30px;
+    font-weight: 600;
+    padding-right: 100px;
+    padding-top: 15px;
 }
 
-.section-subheader{
-    margin-top:75px;
-    text-align:left;
-    font-size:60px;
-    color:black;
+.section-subheader {
+    margin-top: 75px;
+    text-align: left;
+    font-size: 60px;
+    color: black;
 }
 
 /* Video Container and Animation */
@@ -265,7 +127,7 @@ section {
     object-fit: cover; /* This ensures the video scales to cover the container while maintaining aspect ratio */
 }
 
-/*ItemList*/
+/* ItemList */
 .itemList-container {
     display: flex;
     overflow-x: auto;
@@ -296,12 +158,11 @@ section {
 
 .product h2 {
     padding-left: 20px;
-    text-align:center;
-    font-size:35px;
-
+    text-align: center;
+    font-size: 35px;
 }
 
-.product h2 a{
+.product h2 a {
     color: gray;
     font-size: 0.8em;
 }
@@ -313,52 +174,52 @@ section {
     object-fit: contain;
 }
 
-.product p{
-    padding-top:20px;
-    text-align:center;
+.product p {
+    padding-top: 20px;
+    text-align: center;
     font-size: 30px;
-    font-family:"Caveat";
+    font-family: "Caveat";
 }
 
 .hidden {
     opacity: 0;
     filter: blur(5px);
-    transform:translateX(-100%);
+    transform: translateX(-100%);
     transition: all 1s;
 }
 
-.show{
+.show {
     opacity: 1;
-    filter:blur(0);
+    filter: blur(0);
     transform: translateX(0);
 }
 
-.product:nth-child(1){
+.product:nth-child(1) {
     transition-delay: 0ms;
 }
 
-.product:nth-child(2){
+.product:nth-child(2) {
     transition-delay: 150ms;
 }
 
-.product:nth-child(3){
+.product:nth-child(3) {
     transition-delay: 250ms;
 }
 
-.product:nth-child(4){
+.product:nth-child(4) {
     transition-delay: 350ms;
 }
 
-.product:nth-child(5){
+.product:nth-child(5) {
     transition-delay: 450ms;
 }
 
 /* Hover effect for product */
-.product:hover  {
+.product:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease;
-    margin:10px;
-    border-radius: 12px ;
+    margin: 10px;
+    border-radius: 12px;
 }
 
 .product:hover img {
@@ -366,12 +227,10 @@ section {
     transition: transform 0.3s ease;
 }
 
-/*here*/
-
-/*andy*/
+/* Andy */
 .details {
-    padding:0 20px;
-    margin-top:50px;
+    padding: 0 20px;
+    margin-top: 50px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -389,35 +248,28 @@ button {
     white-space: nowrap; /* Prevent text from wrapping */
 }
 
-button:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
-    border: 2px black solid;
-    background-color: #eee;
-    color: #007aff;
-}
 
 button:active {
     background-color: #c5c3c3;
     color: #333;
 }
 
-/*Small Screen*/
+/* Small Screen */
 @media (max-width: 1100px) {
-
-    section{
+    section {
         padding-left: 75px;
     }
-    .section-header-b{
-        padding-right:50px;
+    .section-header-b {
+        padding-right: 50px;
     }
-    .video-container{
-        margin-left:50px;
-        margin-right:50px;
+    .video-container {
+        margin-left: 50px;
+        margin-right: 50px;
         border-radius: 48px;
     }
 }
 
-/*Animation test*/
+/* Animation test */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -432,4 +284,3 @@ button:active {
 .animate-fadeInUp {
     animation: fadeInUp 1.5s ease-out;
 }
-/*Animation test*/

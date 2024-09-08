@@ -46,7 +46,7 @@
 }
 
 /* Increase font size for "About Pinebook" heading */
-.pinebook-paragraph h2{
+.pinebook-paragraph h2 {
     font-size: 3em; /* Adjust the size as needed */
     text-align: center;
     margin: 20px 0;
@@ -62,7 +62,6 @@
     border-radius: 10px;
     transition: background-color 0.3s ease;
 }
-
 
 /* Make the description fade in smoothly when hovered */
 .grid-item:hover .hero-text {
