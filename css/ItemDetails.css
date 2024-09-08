@@ -275,7 +275,7 @@ svg {
 }
 
 #featureContent.open {
-    max-height: 800px; 
+    max-height: 1500px; 
     margin-bottom:50px;
     padding-bottom:25px;
     border-bottom: 0.05px solid gray;
@@ -437,6 +437,9 @@ svg {
     .itemDetails-column-right {
         max-height: none;
         width: 100%;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
     }
 
     #itemImageGallery {
@@ -453,6 +456,7 @@ svg {
     #itemImage {
         width: 100%;
         height: auto;
+        object-fit: contain;
     }
     
     #itemDetails-container {
